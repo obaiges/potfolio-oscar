@@ -69,9 +69,11 @@ export class AppComponent {
     setLang(lang);
   }
 
+  //Cada vez que hay scroll ejecuta esto
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    console.log(scrollPosition)
 
     // Mostrar el botón si el scroll supera los 100px
     this.showButton = scrollPosition > 100;
