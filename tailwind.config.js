@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
+  darkMode:'class',
   theme: {
     extend: {},
     screens: {
@@ -15,4 +16,3 @@ module.exports = {
   },
   plugins: [],
 }
-

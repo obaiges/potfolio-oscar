@@ -1,6 +1,16 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, computed, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { textos } from './textos';
+
+export const currentLang = signal<'en' | 'es'>('es');
+
+export const t = computed(() => textos[currentLang()]);
+
+export const setLang = (lang: 'en' | 'es') => {
+  localStorage.setItem('lang', lang);
+  currentLang.set(lang);
+};
 
 @Component({
   selector: 'app-root',
@@ -10,14 +20,20 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Óscar Baiges Ruiz';
 
-  mode: string = 'dark'; // Valor por defecto
+  mode: string = 'dark';
+  t = t
+  currentLang = currentLang
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Cargar el tema inicial desde localStorage
+      const savedLang = localStorage.getItem('lang') as 'en' | 'es' | null;
+      if (savedLang) currentLang.set(savedLang);
+
+      // Cargr el tema inicial desde localStorage
       const savedMode = localStorage.getItem('mode');
       if (savedMode) {
         this.mode = savedMode;
@@ -28,17 +44,17 @@ export class AppComponent {
 
   toggleMode(): void {
     this.mode = this.mode === 'light' ? 'dark' : 'light';
-    localStorage.setItem('mode', this.mode); // Guardamos el estado en localStorage
+    localStorage.setItem('mode', this.mode);
     this.applyTheme();
   }
 
   applyTheme(): void {
     if (this.mode === 'dark') {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
     } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
     }
   }
 
@@ -46,5 +62,9 @@ export class AppComponent {
     const date = new Date().getFullYear();;
     const age = date - 2022;
     return age;
+  }
+
+  setLanguage(lang: 'en' | 'es') {
+    setLang(lang);
   }
 }
