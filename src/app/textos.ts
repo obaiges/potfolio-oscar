@@ -4,7 +4,7 @@ export const textos = {
     es: {
         menu: {
             exp: 'Experiencia',
-            skills: 'Aptitudes',
+            skills: 'Habilidades',
             proyectos: 'Proyectos',
             sobre: 'Sobre mí',
             contacto: 'Contacto',

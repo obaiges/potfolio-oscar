@@ -54,31 +54,42 @@
 </header>
 <main>
   <section class="box-border max-w-5xl mx-8 lg:mx-auto pt-14" id="experiencia">
-    <span class="text-4xl">{{t().menu.exp}}</span>
-    <div class="w-full mt-8 box-border flex flex-col gap-4 borde-suave rounded-md p-4 text-center">
-      <div class="flex gap-4 justify-between items-center">
+    <header class="text-4xl">{{t().menu.exp}}</header>
+    <article id="fadeArticle"
+      class="w-full mt-8 box-border flex flex-col gap-2 borde-suave rounded-md p-4 text-center opacity-0 translate-y-[-100px] transition-all duration-1000">
+      <header class="flex gap-4 justify-between items-center">
         <span class="text-2xl text-[var(--primary-color)] !font-semibold">{{t().experience.title2}}</span>
-        <span class="opacity-70 text-sm !italic">02/2024 - {{t().experience.time}}</span>
+        <time class="opacity-70 text-sm !italic">02/2024 - {{t().experience.time}}</time>
+      </header>
+      <div class="flex items-center gap-1 select-none">
+        <span class="material-symbols-outlined">location_on</span>
+        <a href="https://www.nitro-pc.es/" class="titulo" alt="Nitropc" title="Nitropc" target="_blank">DVR Technology SL</a>
       </div>
-     <!--  <div class="flex gap-4 items-center">
-        <a href="https://www.nitro-pc.es/" alt="Nitropc" title="Nitropc" target="_blank">
-          <img src="../assets/img/logo-nitropc.png" alt="Logo" class="object-cover w-24 hover:scale-110 transition-transform">
-        </a>  
-        <span class="text-sm">DVR Technology SL (Nitropc)</span>
-      </div> -->
-    </div>
-    <div class="w-full mt-16 box-border flex flex-col gap-4 borde-suave rounded-md p-4 text-center">
-      <div class="flex gap-4 justify-between items-center">
+      <div class="flex gap-4 items-center">
+        <div class="flex-1">
+          <p class="max-w-[80%] text-sm text-start">Actualmente lidero un equipo de 6 programadores en el que estamos en continuo aprendizaje y desarrollo de nuevas tecnologías. Organizo y asumo la responsabilidad de los proyectos y la coordinación del equipo, sin olvidar mis tareas diarias como programador.</p>
+        </div>
+      </div>
+      <footer class="flex gap-4 mt-2 items-center text-[12px] *:rounded-full *:bg-[var(--primary-color-10)] *:border-[1px] *:border-[var(--primary-color-25)] *:py-[2px] *:px-4">
+        <article>Gestión de proyectos</article>
+        <article>Conocimientos de empresa</article>
+        <article>Automatización de procesos</article>
+        <article>Y muchas cosas más...</article>
+      </footer>
+    </article>
+    <article id="fadeArticle2"
+      class="w-full mt-8 box-border flex flex-col gap-4 borde-suave rounded-md p-4 text-center opacity-0 translate-y-[-100px] transition-all duration-700">
+      <header class="flex gap-4 justify-between items-center">
         <span class="text-2xl text-[var(--primary-color)] !font-semibold">{{t().experience.title}}</span>
-        <span class="opacity-70 text-sm !italic">02/2022 - 02/2024</span>
-      </div>
-     <!--  <div class="flex gap-4 items-center">
+        <time class="opacity-70 text-sm !italic">02/2022 - 02/2024</time>
+      </header>
+      <!--  <div class="flex gap-4 items-center">
         <a href="https://www.nitro-pc.es/" alt="Nitropc" title="Nitropc" target="_blank">
           <img src="../assets/img/logo-nitropc.png" alt="Logo" class="object-cover w-24 hover:scale-110 transition-transform">
         </a>  
         <span class="text-sm">DVR Technology SL (Nitropc)</span>
       </div> -->
-    </div>
+    </article>
   </section>
   <svg xmlns="http://www.w3.org/2000/svg" id="skills" viewBox="0 0 1440 320">
     <path fill="var(--primary-color-10)" fill-opacity="1"
@@ -87,7 +98,7 @@
   </svg>
   <section class="w-full box-border bg-[var(--primary-color-10)]">
     <div class="max-w-5xl mx-8 lg:mx-auto">
-      <span class="text-4xl skills-show" id="skills-title">{{t().menu.skills}}</span>
+      <header class="text-4xl skills-show" id="skills-title">{{t().menu.skills}}</header>
       <div class="skills-show" id="skills-body">
         Hola buenas soy las skills
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. At incidunt enim voluptas quis sed atque. Laudantium
@@ -135,7 +146,7 @@
     </path>
   </svg>
   <section class="w-full box-border max-w-5xl mx-8 lg:mx-auto" id="proyectos">
-    <span class="text-4xl">{{t().menu.proyectos}}</span>
+    <header class="text-4xl">{{t().menu.proyectos}}</header>
     <div class="">
       Hola buenas soy los proyectos
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores iure cumque explicabo delectus veniam expedita

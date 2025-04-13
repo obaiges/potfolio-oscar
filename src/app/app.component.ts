@@ -40,6 +40,16 @@ export class AppComponent {
         this.mode = savedMode;
       }
       this.applyTheme();
+      window.addEventListener('DOMContentLoaded', () => {
+        const article = document.getElementById('fadeArticle');
+        const article2 = document.getElementById('fadeArticle2');
+        requestAnimationFrame(() => {
+          article!.classList.remove('opacity-0', 'translate-y-[-100px]');
+          article!.classList.add('opacity-100', 'translate-y-0');
+          article2!.classList.remove('opacity-0', 'translate-y-[-100px]');
+          article2!.classList.add('opacity-100', 'translate-y-0');
+        });
+      });
     }
   }
 
