@@ -151,18 +151,12 @@ export class AppComponent {
   onWindowScroll(): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const titulo = document.getElementById('skills-title');
-    const body = document.getElementById('skills-body');
     let distanciaTitle = window.innerHeight - titulo!.getBoundingClientRect().top;
-    let distanciaBody = window.innerHeight - body!.getBoundingClientRect().top;
     if (distanciaTitle > 300) {
       titulo!.classList.add('skills-show-animation');
     }
-    if (distanciaTitle > 450) {
-      body!.classList.add('skills-show-animation');
-    }
     if (distanciaTitle < 50) {
       titulo!.classList.remove('skills-show-animation');
-      body!.classList.remove('skills-show-animation');
     }
 
     // Mostrar el botón si el scroll supera los 100px
