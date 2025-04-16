@@ -89,16 +89,8 @@ export class AppComponent {
     score: 50
   },
   {
-    name: 'Python',
-    score: 50
-  },
-  {
     name: 'Docker',
     score: 75
-  },
-  {
-    name: 'Linux',
-    score: 60
   }
   ]
 
