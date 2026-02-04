@@ -6,6 +6,7 @@
 :root {
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Playfair Display', serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -57,10 +58,12 @@ h1, h2, h3, h4, h5, h6, .display-font {
     --primary-color: #6366f1; /* Indigo 500 */
     --primary-color-hover: #4f46e5;
     --background-color: #f8fafc;
+    --text-color: #1e293b;
 }
 
 .dark {
     --primary-color: #818cf8; /* Indigo 400 */
     --primary-color-hover: #6366f1;
     --background-color: #0f172a;
+    --text-color: #e3e8f0;
 }

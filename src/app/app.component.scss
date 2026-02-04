@@ -144,20 +144,6 @@ nav {
     }
 }
 
-@keyframes header-blur-scroll {
-    0% {
-        background: radial-gradient(80%, 80%, 50%, 20%, rgba(217, 216, 255, 0.5), rgba(255, 255, 255, 0.9));
-    }
-
-    50% {
-        background-color: var(--background-color);
-    }
-
-    100% {
-        box-shadow: 2px 2px 20px var(--primary-color);
-        background-color: var(--background-color);
-    }
-}
 
 @keyframes moving-shadow {
     0% {
