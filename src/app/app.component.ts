@@ -29,7 +29,7 @@ export class AppComponent {
   showButton = false;
 
   skills = [{
-    name: 'Angular 17+',
+    name: 'Angular 18+',
     score: 85
   },
   {
@@ -73,7 +73,7 @@ export class AppComponent {
     score: 60
   },
   {
-    name: 'Git',
+    name: 'Git & GitHub',
     score: 90
   },
   {

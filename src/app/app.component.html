@@ -25,9 +25,9 @@
     </div>
   </div>
 </nav>
-<header class="pt-40 pb-32 max-w-5xl mx-8 lg:mx-auto" id="head">
+<header class="pt-40 pb-16 max-w-5xl mx-8 lg:mx-auto" id="head">
   <div class="flex gap-12">
-    <div class="flip-card">
+    <div class="flip-card relative">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <img src="../assets/img/perfil.jpg" alt="Logo" class="rounded-md h-full object-cover animate-moving-shadow">
@@ -35,6 +35,13 @@
         <div class="flip-card-back">
           <img src="../assets/img/perfil2.jpg" alt="Logo" class="rounded-md h-full object-cover animate-moving-shadow">
         </div>
+      </div>
+      <div class="orbit orbit-1">
+        <div class="badge">🚀 Clean Code</div>
+      </div>
+
+      <div class="orbit orbit-2">
+        <div class="badge">🎨 Pixel Perfect</div>
       </div>
     </div>
     <div class="flex flex-col gap-8">
@@ -63,14 +70,16 @@
       </header>
       <div class="flex items-center gap-1 select-none">
         <span class="material-symbols-outlined">location_on</span>
-        <a href="https://www.nitro-pc.es/" class="titulo" alt="Nitropc" title="Nitropc" target="_blank">DVR Technology SL</a>
+        <a href="https://www.nitro-pc.es/" class="titulo" alt="Nitropc" title="Nitropc" target="_blank">DVR Technology
+          SL</a>
       </div>
       <div class="flex gap-4 items-center">
         <div class="flex-1">
           <p class="max-w-[80%] text-sm text-start">{{t().experience.description}}</p>
         </div>
       </div>
-      <footer class="flex gap-4 mt-2 items-center text-[13px] *:rounded-full *:shadow-md *:bg-[var(--primary-color-25)] *:border-[1px] *:border-[var(--primary-color-25)] *:py-[2px] *:px-4">
+      <footer
+        class="flex gap-4 mt-2 items-center text-[13px] *:rounded-full *:shadow-md *:bg-[var(--primary-color-25)] *:border-[1px] *:border-[var(--primary-color-25)] *:py-[2px] *:px-4">
         @for (p of t().experience.pastillas; track $index) {
         <article><span>{{p.past}}</span></article>
         }
@@ -84,14 +93,16 @@
       </header>
       <div class="flex items-center gap-1 select-none">
         <span class="material-symbols-outlined">location_on</span>
-        <a href="https://www.nitro-pc.es/" class="titulo" alt="Nitropc" title="Nitropc" target="_blank">DVR Technology SL</a>
+        <a href="https://www.nitro-pc.es/" class="titulo" alt="Nitropc" title="Nitropc" target="_blank">DVR Technology
+          SL</a>
       </div>
       <div class="flex gap-4 items-center">
         <div class="flex-1">
           <p class="max-w-[80%] text-sm text-start">{{t().experience.description2}}</p>
         </div>
       </div>
-      <footer class="flex gap-4 mt-2 items-center text-[13px] *:rounded-full *:shadow-md *:bg-[var(--primary-color-25)] *:border-[1px] *:border-[var(--primary-color-25)] *:py-[2px] *:px-4">
+      <footer
+        class="flex gap-4 mt-2 items-center text-[13px] *:rounded-full *:shadow-md *:bg-[var(--primary-color-25)] *:border-[1px] *:border-[var(--primary-color-25)] *:py-[2px] *:px-4">
         @for (p of t().experience.pastillas2; track $index) {
         <article>{{p.past}}</article>
         }
@@ -105,7 +116,7 @@
       <header class="text-4xl skills-show" id="skills-title">{{t().menu.skills}}</header>
       <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8">
         @for (s of skills; track $index) {
-          <app-skills [name]="s.name" [score]="s.score"></app-skills>
+        <app-skills [name]="s.name" [score]="s.score"></app-skills>
         }
       </section>
     </div>

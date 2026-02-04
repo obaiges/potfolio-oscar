@@ -89,7 +89,7 @@ nav {
     background-color: transparent;
     width: 12rem;
     height: 18rem;
-    min-width: 20rem;
+    min-width: 12rem;
     object-fit: cover;
     perspective: 1000px;
 }
@@ -202,5 +202,61 @@ nav {
 
     100% {
         box-shadow: 2px 0 4px var(--primary-color);
+    }
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160%;
+    height: 160%;
+    transform: translate(-50%, -50%);
+    animation: spin 12s linear infinite;
+}
+
+/* segunda órbita arrancando a 180° */
+.orbit-2 {
+    width: 150%;
+    height: 150%;
+    animation-duration: 18s;
+
+    /* 🔥 desfase */
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* badge */
+.badge {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: counter-spin 12s linear infinite;
+}
+
+/* iguala duración para contrarrotar */
+.orbit-2 .badge {
+    animation-duration: 18s;
+}
+
+/* animaciones */
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes counter-spin {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(-360deg);
     }
 }
