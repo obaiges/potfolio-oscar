@@ -231,6 +231,9 @@ nav {
     background-color: white;
     top: 0;
     left: 50%;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    text-wrap: nowrap;
     transform: translateX(-50%);
     animation: counter-spin 12s linear infinite;
 }
