@@ -63,7 +63,11 @@
   <section id="experiencia" class="max-w-5xl mx-8 lg:mx-auto pt-14" id="experiencia">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-bold mb-2">{{t().menu.exp}}</h2>
-      <div class="h-1 w-20 bg-[var(--primary-color)] mx-auto rounded-full"></div>
+      <div class="h-1 w-20 mx-auto rounded-full
+                  bg-gradient-to-r 
+                  from-[var(--primary-color-50)] 
+                  to-[var(--primary-color)]">
+      </div>
     </div>
 
     <div class="relative border-l-2 border-[var(--primary-color-50)] ml-4 md:ml-0 space-y-12">
@@ -75,32 +79,54 @@
         <div
           class="absolute left-[-11px] top-0 w-5 h-5 rounded-full bg-[var(--primary-color)] ring-4 ring-[var(--primary-color-25)] shadow-lg">
         </div>
-
         <!-- Content -->
         <div
-          class="p-8 rounded-2xl  md:ml-12 transition hover:outline hover:outline-1 hover:outline-[var(--primary-color-50)] hover:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] hover:dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.15),rgba(15,23,42,1))]">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
-            <h3 class="text-2xl font-bold">{{t().experience.title2}}</h3>
-            <span
-              class="px-3 py-1 text-xs font-bold rounded-full bg-[var(--primary-color-10)] text-[var(--primary-color)]">
-              02/2024 - {{t().experience.time}}
-            </span>
+          class="relative p-8 rounded-2xl md:ml-12  border border-transparent transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-[var(--primary-color-50)] group overflow-hidden">
+          <!-- Fondo animado -->
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out
+              group-hover:opacity-100
+              bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
+              dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.15),rgba(15,23,42,1))]">
           </div>
-          <div class="flex items-center gap-2 mb-4 text-sm font-medium">
-            <span class="material-symbols-outlined text-lg">business</span>
-            <a href="https://www.nitro-pc.es/" target="_blank" class="titulo transition-colors">DVR
-              Technology SL</a>
-            •
-            <span class="material-symbols-outlined text-lg">location_on</span> Zaragoza
-          </div>
-          <p class="mb-6">
-            {{t().experience.description}}
-          </p>
-          <div class="flex flex-wrap gap-2">
-            @for (p of t().experience.pastillas; track $index) {
-            <span
-              class="px-3 py-1 rounded-md text-xs font-semibold bg-[var(--primary-color-10)] text-[var(--primary-color)] border border-[var(--primary-color-50)]">{{p.past}}</span>
-            }
+          <!-- Contenido -->
+          <div class="relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+              <h3 class="text-2xl font-bold transition-colors duration-300 group-hover:text-[var(--primary-color)]">
+                {{t().experience.title2}}
+              </h3>
+              <span
+                class="px-3 py-1 text-xs font-bold rounded-full bg-[var(--primary-color-10)] text-[var(--primary-color)] transition-all duration-300 group-hover:scale-105">
+                02/2024 - {{t().experience.time}}
+              </span>
+            </div>
+            <div class="flex items-center gap-2 mb-4 text-sm font-medium">
+              <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:rotate-6">
+                business
+              </span>
+              <a href="https://www.nitro-pc.es/" target="_blank"
+                class="titulo transition-colors duration-300 hover:text-[var(--primary-color)]">
+                DVR Technology SL
+              </a>
+              •
+              <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:-rotate-6">
+                location_on
+              </span> Zaragoza
+            </div>
+            <p class="mb-6 transition-opacity duration-300 group-hover:opacity-90">
+              {{t().experience.description}}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              @for (p of t().experience.pastillas; track $index) {
+              <span class="px-3 py-1 rounded-md text-xs font-semibold
+                bg-[var(--primary-color-10)]
+                text-[var(--primary-color)]
+                border border-[var(--primary-color-50)]
+                transition-all duration-300
+                hover:scale-105 hover:shadow-md">
+                {{p.past}}
+              </span>
+              }
+            </div>
           </div>
         </div>
       </article>
@@ -114,49 +140,95 @@
         </div>
 
         <div
-          class="p-8 rounded-2xl md:ml-12 transition hover:outline hover:outline-1 hover:outline-[var(--primary-color-50)] hover:shadow-md hover:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] hover:dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.15),rgba(15,23,42,1))]">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
-            <h3 class="text-2xl font-bold">{{t().experience.title}}</h3>
-            <span
-              class="px-3 py-1 text-xs font-bold rounded-full bg-[var(--primary-color-10)] text-[var(--primary-color)]">
-              02/2022 - 02/2024
-            </span>
+          class="relative p-8 rounded-2xl md:ml-12 border border-transparent transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-[var(--primary-color-50)] group overflow-hidden">
+
+          <!-- Fondo animado con blur -->
+          <div
+            class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 backdrop-blur-sm bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.75))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.15),rgba(15,23,42,0.85))]">
           </div>
-          <div class="flex items-center gap-2 mb-4 text-sm font-medium">
-            <span class="material-symbols-outlined text-lg">business</span>
-            <a href="https://www.nitro-pc.es/" target="_blank" class="titulo transition-colors">DVR
-              Technology SL</a>
-            •
-            <span class="material-symbols-outlined text-lg">location_on</span> Zaragoza
-          </div>
-          <p class="mb-6">
-            {{t().experience.description2}}
-          </p>
-          <div class="flex flex-wrap gap-2">
-            @for (p of t().experience.pastillas2; track $index) {
-            <span
-              class="px-3 py-1 rounded-md text-xs font-semibold bg-[var(--primary-color-10)] text-[var(--primary-color)] border border-[var(--primary-color-50)]">{{p.past}}</span>
-            }
+
+          <!-- Contenido -->
+          <div class="relative z-10">
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+              <h3 class="text-2xl font-bold transition-colors duration-300 group-hover:text-[var(--primary-color)]">
+                {{t().experience.title}}
+              </h3>
+
+              <span
+                class="px-3 py-1 text-xs font-bold rounded-full bg-[var(--primary-color-10)] text-[var(--primary-color)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-sm">
+                02/2022 - 02/2024
+              </span>
+            </div>
+            <div class="flex items-center gap-2 mb-4 text-sm font-medium">
+              <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:rotate-6">
+                business
+              </span>
+              <a href="https://www.nitro-pc.es/" target="_blank" class="titulo transition-colors duration-300
+                hover:text-[var(--primary-color)]">
+                DVR Technology SL
+              </a>
+              •
+              <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:-rotate-6">
+                location_on
+              </span>
+              Zaragoza
+            </div>
+
+            <p class="mb-6 transition-opacity duration-300 group-hover:opacity-90">
+              {{t().experience.description2}}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              @for (p of t().experience.pastillas2; track $index) {
+              <span
+                class="px-3 py-1 rounded-md text-xs font-semibold bg-[var(--primary-color-10)] text-[var(--primary-color)] border border-[var(--primary-color-50)] transition-all duration-300 hover:scale-105 hover:shadow-md">
+                {{p.past}}
+              </span>
+              }
+            </div>
+
           </div>
         </div>
+
       </article>
     </div>
   </section>
 
 
-  <section id="skills" class="w-full box-border py-10 my-20 skew-y-1 bg-[var(--primary-color-10)]">
-    <div class="max-w-5xl mx-8 lg:mx-auto -skew-y-1">
+  <section id="skills"
+    class="w-full box-border py-16 my-24 skew-y-1 relative overflow-hidden bg-gradient-to-br  from-[var(--primary-color-10)] via-[var(--background-color)] to-[var(--primary-color-25)]">
+
+    <!-- Glow decorativo -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 
+              bg-[var(--primary-color-25)] 
+              rounded-full blur-3xl opacity-40"></div>
+
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 
+              bg-[var(--primary-color-10)] 
+              rounded-full blur-3xl opacity-40"></div>
+
+    <div class="max-w-5xl mx-8 lg:mx-auto -skew-y-1 relative z-10">
+
       <div class="text-center mb-16 skills-show" id="skills-title">
-        <h2 class="text-4xl font-bold mb-2">{{t().menu.skills}}</h2>
-        <div class="h-1 w-20 bg-[var(--primary-color)] mx-auto rounded-full"></div>
+        <h2 class="text-4xl font-bold mb-2">
+          {{t().menu.skills}}
+        </h2>
+        <div class="h-1 w-20 mx-auto rounded-full
+                  bg-gradient-to-r 
+                  from-[var(--primary-color-50)] 
+                  to-[var(--primary-color)]"></div>
       </div>
+
       <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8">
         @for (s of skills; track $index) {
         <app-skills [name]="s.name" [score]="s.score"></app-skills>
         }
       </section>
+
     </div>
   </section>
+
 
   <section class="w-full box-border" id="proyectos">
     <div class="max-w-5xl mx-8 lg:mx-auto">
