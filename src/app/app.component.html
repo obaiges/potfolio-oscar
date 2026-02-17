@@ -10,7 +10,7 @@
       <a href="#experiencia" class="titulo">{{t().menu.exp}}</a>
       <a href="#skills" class="titulo">{{t().menu.skills}}</a>
       <a href="#proyectos" class="titulo">{{t().menu.proyectos}}</a>
-      <a href="#" class="titulo">{{t().menu.sobre}}</a>
+      <a href="#sobre-mi" class="titulo">{{t().menu.sobre}}</a>
       <a href="#" class="titulo">{{t().menu.contacto}}</a>
     </div>
     <div class="flex items-center gap-4 cursor-pointer">
@@ -230,12 +230,63 @@
   </section>
 
 
-  <section class="w-full box-border" id="proyectos">
+  <section class="w-full box-border pt-16" id="proyectos">
     <div class="max-w-5xl mx-8 lg:mx-auto">
-      <header class="text-4xl">{{t().menu.proyectos}}</header>
+      <header class="text-4xl font-bold mb-16">{{t().menu.proyectos}}
+        <div class="h-1 w-20 rounded-full mt-2
+                  bg-gradient-to-r 
+                  from-[var(--primary-color-50)] 
+                  to-[var(--primary-color)]">
+        </div>
+      </header>
       <div class="">
         Hola buenas soy los proyectos
       </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="w-full box-border py-16 my-24 -skew-y-1 relative overflow-hidden bg-gradient-to-br  from-[var(--primary-color-10)] via-[var(--background-color)] to-[var(--primary-color-25)]">
+    <div class="absolute -top-32 -left-32 w-96 h-96 
+              bg-[var(--primary-color-25)] 
+              rounded-full blur-3xl opacity-40"></div>
+
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 
+              bg-[var(--primary-color-10)] 
+              rounded-full blur-3xl opacity-40"></div>
+    <div class="max-w-5xl mx-8 lg:mx-auto relative z-10 skew-y-1">
+
+      <!-- Title with animation class reused -->
+      <div class="text-center mb-16 skills-show" id="about-title">
+        <h2 class="text-4xl font-bold mb-2">{{t().about.title}}</h2>
+        <div class="h-1 w-20 mx-auto rounded-full
+                  bg-gradient-to-r 
+                  from-[var(--primary-color-50)] 
+                  to-[var(--primary-color)]">
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col md:flex-row gap-12 items-center skills-show" id="about-content">
+        <!-- Image/Decor -->
+        <div class="w-full md:w-1/3 flex justify-center">
+          <div class="relative w-64 h-64">
+            <div class="absolute inset-0 bg-[var(--primary-color-25)] rounded-full blur-2xl animate-pulse"></div>
+            <img src="../assets/img/perfil3.jpeg" alt="Profile"
+              class="rounded-full w-full h-full object-cover border-4 border-[var(--primary-color-50)] relative z-10 transition-transform hover:scale-105 duration-500">
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="w-full md:w-2/3">
+          <div
+            class="p-8 rounded-2xl bg-[var(--primary-color-10)] border border-[var(--primary-color-25)] backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[var(--primary-color-50)] group">
+            <p class="text-lg leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity whitespace-pre-line">
+              {{t().about.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>

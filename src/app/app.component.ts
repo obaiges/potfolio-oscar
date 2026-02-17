@@ -159,6 +159,21 @@ export class AppComponent {
       titulo!.classList.remove('skills-show-animation');
     }
 
+    const aboutTitle = document.getElementById('about-title');
+    if (aboutTitle) {
+      const dist = window.innerHeight - aboutTitle.getBoundingClientRect().top;
+      if (dist > 200) aboutTitle.classList.add('skills-show-animation');
+      // optional: remove if scrolling up? kept consistent with skills-title
+      if (dist < 0) aboutTitle.classList.remove('skills-show-animation');
+    }
+
+    const aboutContent = document.getElementById('about-content');
+    if (aboutContent) {
+      const dist = window.innerHeight - aboutContent.getBoundingClientRect().top;
+      if (dist > 200) aboutContent.classList.add('skills-show-animation');
+      if (dist < 0) aboutContent.classList.remove('skills-show-animation');
+    }
+
     // Mostrar el botón si el scroll supera los 100px
     this.showButton = scrollPosition > 100;
   }
