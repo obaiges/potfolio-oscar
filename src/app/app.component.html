@@ -11,7 +11,7 @@
       <a href="#skills" class="titulo">{{t().menu.skills}}</a>
       <a href="#proyectos" class="titulo">{{t().menu.proyectos}}</a>
       <a href="#sobre-mi" class="titulo">{{t().menu.sobre}}</a>
-      <a href="#" class="titulo">{{t().menu.contacto}}</a>
+      <a href="#contact" class="titulo">{{t().menu.contacto}}</a>
     </div>
     <div class="flex items-center gap-4 cursor-pointer">
       @if(currentLang() == 'es') {
@@ -51,10 +51,10 @@
           class="!font-semibold text-[var(--primary-color)]">Full-Stack Developer</span> {{t().header.desc2}}</span>
       <div class="flex gap-4 *:select-none *:text-sm">
         <div class="estado flex items-center text-center bg-[var(--primary-color-25)]">{{t().header.status}}</div>
-        <div
-          class="flex cursor-pointer border hover:scale-105 transition-transform border-[var(--text-color)] rounded-full items-center gap-2 py-1 px-4">
+        <a
+          class="flex cursor-pointer border hover:scale-105 transition-transform border-[var(--text-color)] rounded-full items-center gap-2 py-1 px-4" href="#contact">
           <span class="material-symbols-outlined">forward_to_inbox</span> {{t().header.contact}}
-        </div>
+      </a>
       </div>
     </div>
   </div>
@@ -96,7 +96,7 @@
               </h3>
               <span
                 class="px-3 py-1 text-xs font-bold rounded-full bg-[var(--primary-color-10)] text-[var(--primary-color)] transition-all duration-300 group-hover:scale-105">
-                02/2024 - {{t().experience.time}}
+                09/2024 - {{t().experience.time}}
               </span>
             </div>
             <div class="flex items-center gap-2 mb-4 text-sm font-medium">
@@ -157,7 +157,7 @@
 
               <span
                 class="px-3 py-1 text-xs font-bold rounded-full bg-[var(--primary-color-10)] text-[var(--primary-color)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-sm">
-                02/2022 - 02/2024
+                02/2022 - 09/2024
               </span>
             </div>
             <div class="flex items-center gap-2 mb-4 text-sm font-medium">
@@ -297,7 +297,7 @@
     </div>
   </section>
 </main>
-<footer class="max-w-5xl mx-auto">
+<footer id="contact" class="max-w-5xl mx-auto">
   Footer
 </footer>
 @if(showButton) {
